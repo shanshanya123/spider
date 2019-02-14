@@ -29,3 +29,7 @@ def parse_one_page(html):
            'time':item[4].strip()[5:]if len(item[4])>5 else '',
            'score':item[5].strip()+item[6].strip()
        }
+def write_to_file(content):
+    with open('result.txt','a',encoding='utf-8') as f:
+        print(type(json.dumps(content)))
+        f.write(json.dumps(content,ensure_ascii=False)+'\n')
